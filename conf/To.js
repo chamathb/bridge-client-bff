@@ -97,6 +97,11 @@ const STAKEHOLDER = {
   context : "/stakeHolder"
 }
 
+const BLTYPE = {
+  base : "http://localhost:3010",
+  context : "/blType"
+}
+
 
 
 const ENDPOINTS = {
@@ -114,7 +119,8 @@ const ENDPOINTS = {
   MATERIAL,
   MATERIALTYPE,
   MESURE,
-  STAKEHOLDER
+  STAKEHOLDER,
+  BLTYPE
 };
 
 module.exports = {
