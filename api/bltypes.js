@@ -1,5 +1,5 @@
 //nishakara
-
+/*
 const {bltypesService} = require('../service/BlTypesService');
 const {
     PATHS,
@@ -87,3 +87,6 @@ module.exports = {
     }]
     }
 };
+
+
+*/

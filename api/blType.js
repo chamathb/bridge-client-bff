@@ -1,4 +1,4 @@
-const {bltypesService} = require('../service/BlTypesService');
+const {bltypeService} = require('../service/BlTypeService');
 const {
     PATHS,
     HTTP_METHODS
@@ -12,7 +12,8 @@ const getHandler = (req, res) => {
     try {
         console.log('bl0.0')
         if (req.params.ID !== null && typeof req.params.ID !== 'undefined') {
-            bltypesService.get(req.params.ID).then(function (result) {
+            console.error('blIF')
+            bltypeService.getbl(req.params.ID).then(function (result) {
                 return res.status(result.status).send(result.data);
                 
             }).catch(function (error) {
@@ -23,14 +24,16 @@ const getHandler = (req, res) => {
             console.error('bl1')
         }
         else {
-            bltypesService.getAll().then(function (result) {
+            console.error("BL3")
+            bltypeService.getblAll().then(function (result) {
                 return res.status(result.status).send(result.data);
+            
             }).catch(function (error) {
                 return res.status(ERROR_CODES.INTERNAL_SERVER_ERROR).send(JSON.stringify(error));
             });
-            console.error('bl2')
+            console.error('bl4')
         }
-        console.error('bl3')
+        console.error('bl5')
     }
 
     catch (error) {
@@ -44,7 +47,7 @@ const getHandler = (req, res) => {
 const postHandler = (req, res) => {
 
     try {
-        bltypesService.post(req.body).then(function (result) {
+        bltypeService.postbl(req.body).then(function (result) {
 
             return res.status(result.status).send(result.data);
 
@@ -60,7 +63,7 @@ const postHandler = (req, res) => {
 
 const putHandler = (req, res) => {
     try {
-        bltypesService.put(req.body).then(function (result) {
+        bltypeService.putbl(req.body).then(function (result) {
             return res.status(result.status).send(result.data);
 
         }).catch(function (error) {
