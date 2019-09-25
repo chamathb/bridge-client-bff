@@ -27,7 +27,7 @@ module.exports = {
     MESURE_ID: '/mesure/:id',
 
     STAKEHOLDER: '/stakeHolder',
-    Stake_ID : '/stakeHolder/:id',
+    Stake_ID : '/stakeHolder/:ID',
 
     BLTYPE : '/blType',
     BLTYPE_ID : 'blType/:ID'

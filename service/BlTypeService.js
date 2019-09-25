@@ -7,7 +7,7 @@ log4js.configure(require('../conf/log4js.json'));
 const log = log4js.getLogger('bltypeService');
 
 const getblAll = () => {
-    consile.error("ERRORBLSERVICE")
+    console.error("ERRORBLSERVICE")
     log.info(`Get all B/l types of client`);
     const response = bltypeRepo.getblAll();
     return response;

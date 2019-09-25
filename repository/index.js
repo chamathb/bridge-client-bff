@@ -4,7 +4,6 @@ const { getHsCodes, getHsCode, putHsCode, postHsCode } = require('./HsCodeReposi
 
 const { getAll, get, put, post} = require('./StakeholderRepository')
 
-const { getblAll, getbl, postbl, putbl } = require('./BlTypeRepository');
 
 const approvalsRepo = require('./RegapprovalRepository');
 
@@ -29,12 +28,10 @@ const  mesureRepo = require('./MesureRepository');
 
 const stakeholderRepo = require('./StakeholderRepository');
 
-//const bltypesRepo = require ('./BlTypeRepository');
+const bltypeRepo = require ('./BlTypeRepository');
 
 const userRepo = { login };
 const hscodeRepo = { getHsCodes, getHsCode, putHsCode, postHsCode };
-const stakeholderRepo = {getAll, get, put, post};
-const bltypeRepo = { getblAll, getbl, postbl, putbl };
 
 
 const supplierRepo = { getAll, get, put, post};

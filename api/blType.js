@@ -12,7 +12,7 @@ const getHandler = (req, res) => {
     try {
         console.log('bl0.0')
         if (req.params.ID !== null && typeof req.params.ID !== 'undefined') {
-            console.error('blIF')
+            console.log('blIF')
             bltypeService.getbl(req.params.ID).then(function (result) {
                 return res.status(result.status).send(result.data);
                 
@@ -21,14 +21,16 @@ const getHandler = (req, res) => {
                 
             });
 
-            console.error('bl1')
+            console.log('bl1')
         }
         else {
-            console.error("BL3")
+            console.log("BL3")
             bltypeService.getblAll().then(function (result) {
+                console.log("BL33")
                 return res.status(result.status).send(result.data);
             
             }).catch(function (error) {
+                console.log(error);
                 return res.status(ERROR_CODES.INTERNAL_SERVER_ERROR).send(JSON.stringify(error));
             });
             console.error('bl4')
@@ -37,6 +39,7 @@ const getHandler = (req, res) => {
     }
 
     catch (error) {
+        console.log(error)
         return res.status(ERROR_CODES.INTERNAL_SERVER_ERROR).send(JSON.stringify(error));
         
     }

@@ -21,7 +21,7 @@ const getblAll = async () => {
     try {
         log.info(`Calling ${url}`);
         const response = await axios.get(url);
-        //console.log("getbltyprALL",response)
+        console.log("getbltyprALL",response)
         return response;
     }
     catch(err) {
