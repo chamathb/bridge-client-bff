@@ -14,6 +14,7 @@ const getHandler = (req, res) => {
         if (req.params.ID !== null && typeof req.params.ID !== 'undefined') {
             console.log('blIF')
             bltypeService.getbl(req.params.ID).then(function (result) {
+                //return res.send(json)
                 return res.status(result.status).send(result.data);
                 
             }).catch(function (error) {
