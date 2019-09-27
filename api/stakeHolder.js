@@ -19,8 +19,8 @@ const getHandler = (req, res) => {
             stakeholderService.get(req.params.ID).then(function (result) {
                 return res.status(result.status).send(result.data);
             }).catch(function (error) {
-                return res.send(json)
-                //return res.status(ERROR_CODES.INTERNAL_SERVER_ERROR).send(JSON.stringify(error));
+               // return res.send(json)
+                return res.status(ERROR_CODES.INTERNAL_SERVER_ERROR).send(JSON.stringify(error));
             });
 
             console.error('stake1')
@@ -29,8 +29,8 @@ const getHandler = (req, res) => {
             stakeholderService.getAll().then(function (result) {
                 return res.status(result.status).send(result.data);
             }).catch(function (error) {
-                return res.send(json)
-                //return res.status(ERROR_CODES.INTERNAL_SERVER_ERROR).send(JSON.stringify(error));
+                //return res.send(json)
+                return res.status(ERROR_CODES.INTERNAL_SERVER_ERROR).send(JSON.stringify(error));
             });
             console.error('stake2')
         }

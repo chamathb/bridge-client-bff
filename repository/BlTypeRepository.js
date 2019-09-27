@@ -18,17 +18,21 @@ const username = 'UAT USER';
 
 const getblAll = async () => {
     const url = ENDPOINTS.BLTYPE.base + '/' + client + ENDPOINTS.BLTYPE.context;
+    console.log(url);
     try {
         log.info(`Calling ${url}`);
         const response = await axios.get(url);
         console.log("getbltyprALL",response)
         return response;
+        
     }
     catch(err) {
         log.error(`Error occurred while fetching B/L Types- ${err}`, err);
         console.error(err);
         throw err;
     }
+
+    
 };
 
 const getbl = async (ID) => {
@@ -90,6 +94,8 @@ const putbl = async (body) => {
 
 module.exports = {
     getblAll,
+
+    
     getbl,
     postbl,
     putbl
