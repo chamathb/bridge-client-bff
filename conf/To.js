@@ -67,10 +67,7 @@ const BANK = {
   context: "/bank"
 };
 
-const PAYMENT_TERM = {
-  base: "http://localhost:3020",
-  context: "/paymentterm"
-};
+
 
 const TRADE_AGREEMENT = {
   base: "http://localhost:3010",
@@ -101,6 +98,11 @@ const BLTYPE = {
   base : "http://localhost:3010",
   context : "/blType"
 }
+
+const PAYMENT_TERM = {
+  base: "http://localhost:3010",
+  context: "/paymentsTerm"
+};
 
 
 
