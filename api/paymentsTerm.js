@@ -10,18 +10,16 @@ const JSON = require('circular-json');
 const { ERROR_CODES} = require('../conf/ErrorCodes');
 
 const getHandler = (req, res) => {
-    console.log("pt1");
     try {
-        console.log("pt2");
         if (req.params.ID !== null && typeof req.params.ID !== 'undefined') {
-            console.log("pt3");
+           
             paymenttermService.get(req.params.ID).then(function (result) {                
                 return res.status(result.status).send(result.data);
                 //const json = JSON.stringify(result.data);
                 //return res.send(json)
                 
             }).catch(function (error) {
-                console.log("pt4");
+                
                 //console.error(error);
                 return res.status(ERROR_CODES.INTERNAL_SERVER_ERROR).send(JSON.stringify(error));
                // const json = JSON.stringify(error);
@@ -29,24 +27,24 @@ const getHandler = (req, res) => {
             });
         } 
         else {
-            console.log("pt5");
+           
             paymenttermService.getAll().then(function (result) {
-                console.log("pt6");
+               
                 return res.status(result.status).send(result.data);
                 //const json = JSON.stringify(result.data);
                 //return res.send(json)
             }).catch(function (error) {
-                console.log("pt7");
+              
                 console.error(error);
                 return res.status(ERROR_CODES.INTERNAL_SERVER_ERROR).send(JSON.stringify(error));
                 //const json = JSON.stringify(error);
                 //return res.status(500).send(json);
                 
             });
-        }console.log("pt7");
+        }
     } catch (error) {
         console.log(error);
-        console.log("pt8");
+        
         return res.status(ERROR_CODES.INTERNAL_SERVER_ERROR).send(JSON.stringify(error));
      
         //const json = JSON.stringify(error);

@@ -7,9 +7,6 @@ const { getAll, get, put, post} = require('./StakeholderRepository')
 
 const approvalsRepo = require('./RegapprovalRepository');
 
-
-//const { getAll, get, put, post} = require('./SupplierRepository');
-
 const incotermRepo = require('./IncotermRepository');
 
 const bankRepo = require('./BankRepository');

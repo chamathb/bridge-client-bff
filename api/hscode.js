@@ -11,9 +11,7 @@ const {
 const JSON = require('circular-json');
 
 const getHsCodesHandler = (req, res) => {
-    console.log('HS0')
     try {
-        console.log('HS1')
         if (req.params.id !== null && typeof req.params.id !== 'undefined') {
             hsCodeService.getHsCode(req.params.id).then(function(result) {
                 const json = JSON.stringify(result.data);
@@ -25,7 +23,6 @@ const getHsCodesHandler = (req, res) => {
             });
             
         } else {
-            console.log('HS3')
             hsCodeService.getHsCodes().then(function(result) {
                 const json = JSON.stringify(result.data);
                 return res.send(json)
@@ -34,9 +31,7 @@ const getHsCodesHandler = (req, res) => {
                 const json = JSON.stringify(error);
                 return res.send(json);
             });
-            console.log('HS4')
         }
-        console.log('HS5')
     } catch (error) {
         const json = JSON.stringify(error);
         return res.status(500).send(json);

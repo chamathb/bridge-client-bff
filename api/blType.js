@@ -8,9 +8,7 @@ const { ERROR_CODES} = require('../conf/ErrorCodes');
 
 
 const getHandler = (req, res) => {
-    console.log('bl0')
     try {
-        console.log('bl0.0')
         if (req.params.ID !== null && typeof req.params.ID !== 'undefined') {
             console.log('blIF')
             bltypeService.getbl(req.params.ID).then(function (result) {
@@ -22,21 +20,16 @@ const getHandler = (req, res) => {
                 
             });
 
-            console.log('bl1')
         }
         else {
-            console.log("BL3")
             bltypeService.getblAll().then(function (result) {
-                console.log("BL33")
                 return res.status(result.status).send(result.data);
             
             }).catch(function (error) {
                 console.log(error);
                 return res.status(ERROR_CODES.INTERNAL_SERVER_ERROR).send(JSON.stringify(error));
             });
-            console.error('bl4')
         }
-        console.error('bl5')
     }
 
     catch (error) {
@@ -98,4 +91,4 @@ module.exports = {
         handler : getHandler
     }]
     }
-};
+}
